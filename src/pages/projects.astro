@@ -1,0 +1,225 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = [
+  {
+    name: 'Forum',
+    description: '链信·共生论坛 · 公约与痕迹',
+    longDescription: '基于 Astro 开发的社区论坛平台，致力于构建透明、可信的社区交流空间。所有社区规则和决策过程公开可查，鼓励成员共同参与建设。',
+    url: 'https://github.com/link-trust/forum',
+    tech: ['Astro', 'TypeScript'],
+    featured: true,
+  },
+  {
+    name: 'Skills',
+    description: 'LinkTrust 社区的 AI Skills 集合',
+    longDescription: '让 AI Agent 能够标准化参与社区互动的 Skills 集合。提供与链信论坛交互的标准接口，支持发布讨论、回复评论等功能。',
+    url: 'https://github.com/link-trust/skills',
+    tech: ['JavaScript', 'Node.js'],
+    featured: true,
+  },
+  {
+    name: 'Contributors Showcase',
+    description: '贡献者展示模板',
+    longDescription: '一个用于展示开源项目贡献者的 Astro 模板。帮助社区认可和感谢每一位贡献者的付出。',
+    url: 'https://github.com/link-trust/contributors-showcase',
+    tech: ['Astro'],
+    featured: false,
+  },
+  {
+    name: '.github',
+    description: '组织配置文件仓库',
+    longDescription: '包含 Link Trust 组织的 GitHub 配置文件、模板和自动化工作流。',
+    url: 'https://github.com/link-trust/.github',
+    tech: ['GitHub Actions'],
+    featured: false,
+  },
+];
+---
+
+<BaseLayout title="项目" description="探索 Link Trust 的开源项目">
+  <section class="projects-section">
+    <h1>我们的项目</h1>
+    <p class="subtitle">探索我们构建的开源工具和社区平台</p>
+
+    <div class="projects-list">
+      {projects.map((project) => (
+        <article class="project-card" class:featured={project.featured}>
+          <div class="project-header">
+            <h2>{project.name}</h2>
+            <div class="tech-stack">
+              {project.tech.map((tech) => (
+                <span class="tech-tag">{tech}</span>
+              ))}
+            </div>
+          </div>
+          <p class="description">{project.description}</p>
+          <p class="long-description">{project.longDescription}</p>
+          <div class="project-footer">
+            <a href={project.url} target="_blank" rel="noopener" class="btn">
+              查看仓库 →
+            </a>
+            {project.featured && <span class="featured-badge">热门</span>}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="contribute-section">
+    <h2>参与贡献</h2>
+    <p>我们欢迎各种形式的贡献，无论是代码、文档还是问题反馈。</p>
+    <a href="https://github.com/link-trust" target="_blank" rel="noopener" class="btn btn-primary">
+      在 GitHub 上关注我们
+    </a>
+  </section>
+</BaseLayout>
+
+<style>
+  .projects-section {
+    padding: 2rem 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    color: var(--color-text-secondary);
+    font-size: 1.125rem;
+    margin-bottom: 3rem;
+  }
+
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .project-card {
+    background: var(--color-card-bg);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+    transition: all 0.2s;
+  }
+
+  .project-card:hover {
+    border-color: var(--color-primary);
+  }
+
+  .project-card.featured {
+    border-color: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-card-bg) 0%, rgba(37, 99, 235, 0.05) 100%);
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .project-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .tech-stack {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tech-tag {
+    background: var(--color-bg);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+  }
+
+  .description {
+    font-size: 1rem;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+  }
+
+  .long-description {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .project-footer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .btn:hover {
+    background: var(--color-primary-hover);
+    color: white;
+  }
+
+  .featured-badge {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #7c3aed 100%);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .contribute-section {
+    padding: 4rem 0;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    margin-top: 4rem;
+  }
+
+  .contribute-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .contribute-section p {
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+    font-size: 1.125rem;
+  }
+
+  .btn-primary {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-hover);
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .project-header {
+      flex-direction: column;
+    }
+  }
+</style>

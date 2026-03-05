@@ -1,0 +1,257 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="关于" description="了解 Link Trust 组织的使命、愿景和价值观">
+  <section class="about-section">
+    <h1>关于 Link Trust</h1>
+    
+    <div class="content">
+      <p class="lead">
+        Link Trust 是一个专注于构建可信数字社区的开源组织。
+      </p>
+      
+      <p>
+        在数字化时代，信任是最宝贵的资产。我们相信，通过技术创新和开放协作，
+        可以建立更加透明、公正、可持续的社区生态。Link Trust 致力于为此提供基础设施和工具。
+      </p>
+    </div>
+  </section>
+
+  <section class="mission-section">
+    <h2>使命与愿景</h2>
+    <div class="mission-grid">
+      <div class="mission-card">
+        <h3>🎯 使命</h3>
+        <p>通过技术创新促进透明、协作和共生的社区生态，让每一个参与者都能建立和获得信任。</p>
+      </div>
+      <div class="mission-card">
+        <h3>👁️ 愿景</h3>
+        <p>成为可信赖的数字社区基础设施提供者，推动开源社区向更加透明和协作的方向发展。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <h2>核心价值观</h2>
+    <div class="values-list">
+      <div class="value-item">
+        <div class="value-icon">🔍</div>
+        <div class="value-content">
+          <h3>透明 (Transparency)</h3>
+          <p>我们相信透明是信任的基础。所有社区规则、决策过程和代码都应当公开可查，让每个成员都能理解和参与。</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">🤝</div>
+        <div class="value-content">
+          <h3>协作 (Collaboration)</h3>
+          <p>独行快，众行远。我们鼓励社区成员共同参与建设，通过协作创造更大的价值。</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">✅</div>
+        <div class="value-content">
+          <h3>信任 (Trust)</h3>
+          <p>信任需要建立和维护。我们致力于建立可验证的信任机制，让信任不再依赖于中心化机构。</p>
+        </div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">🌱</div>
+        <div class="value-content">
+          <h3>共生 (Symbiosis)</h3>
+          <p>人与技术应当和谐共存。我们倡导技术服务于人，促进社区成员之间的互利共生关系。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="join-section">
+    <h2>加入我们</h2>
+    <p>无论你是开发者、设计师、文档撰写者还是社区建设者，都欢迎加入 Link Trust。</p>
+    <div class="join-links">
+      <a href="https://github.com/link-trust" target="_blank" rel="noopener" class="btn btn-primary">
+        GitHub 组织
+      </a>
+      <a href="https://linktrust.top" class="btn btn-secondary">
+        访问官网
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-section {
+    padding: 2rem 0;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .content {
+    max-width: 800px;
+  }
+
+  .lead {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+  }
+
+  .content p {
+    color: var(--color-text-secondary);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .mission-section {
+    padding: 4rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .mission-card {
+    background: var(--color-card-bg);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+  }
+
+  .mission-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .mission-card p {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  .values-section {
+    padding: 4rem 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .values-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .value-item {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--color-card-bg);
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+  }
+
+  .value-icon {
+    font-size: 3rem;
+    flex-shrink: 0;
+  }
+
+  .value-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .value-content p {
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+  }
+
+  .join-section {
+    padding: 4rem 0;
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+  }
+
+  .join-section h2 {
+    margin-bottom: 1rem;
+  }
+
+  .join-section p {
+    color: var(--color-text-secondary);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .join-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .btn-primary {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-hover);
+    color: white;
+  }
+
+  .btn-secondary {
+    background: var(--color-card-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-border);
+    color: var(--color-text);
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+    }
+
+    .value-item {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .value-icon {
+      margin: 0 auto;
+    }
+  }
+</style>

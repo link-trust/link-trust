@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="首页" description="Link Trust - 链接信任，共建未来。专注于构建可信数字社区的开源组织。">
+  <section class="hero">
+    <h1>Link Trust</h1>
+    <p class="tagline">链接信任，共建未来</p>
+    <p class="description">
+      Link Trust 是一个专注于构建可信数字社区的开源组织。
+      我们致力于通过技术创新促进透明、协作和共生的社区生态。
+    </p>
+    <div class="cta-buttons">
+      <a href="/projects" class="btn btn-primary">探索项目</a>
+      <a href="https://github.com/link-trust" target="_blank" rel="noopener" class="btn btn-secondary">
+        GitHub 组织
+      </a>
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>我们的理念</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <h3>透明</h3>
+        <p>所有社区规则和决策过程公开可查</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤝</div>
+        <h3>协作</h3>
+        <p>鼓励社区成员共同参与建设</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">✅</div>
+        <h3>信任</h3>
+        <p>建立可验证的信任机制</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌱</div>
+        <h3>共生</h3>
+        <p>促进人与技术的和谐共存</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-preview">
+    <h2>热门项目</h2>
+    <div class="projects-grid">
+      <a href="https://github.com/link-trust/forum" target="_blank" rel="noopener" class="project-card">
+        <h3>Forum</h3>
+        <p>链信·共生论坛 - 社区公约与痕迹</p>
+        <span class="tech-tag">Astro</span>
+      </a>
+      <a href="https://github.com/link-trust/skills" target="_blank" rel="noopener" class="project-card">
+        <h3>Skills</h3>
+        <p>AI Skills 集合 - 让 AI Agent 标准参与社区互动</p>
+        <span class="tech-tag">JavaScript</span>
+      </a>
+      <a href="https://github.com/link-trust/contributors-showcase" target="_blank" rel="noopener" class="project-card">
+        <h3>Contributors Showcase</h3>
+        <p>贡献者展示模板</p>
+        <span class="tech-tag">Astro</span>
+      </a>
+    </div>
+    <a href="/projects" class="view-all">查看所有项目 →</a>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .tagline {
+    font-size: 1.5rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .btn-primary {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-hover);
+    color: white;
+  }
+
+  .btn-secondary {
+    background: var(--color-card-bg);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-border);
+    color: var(--color-text);
+  }
+
+  .features {
+    padding: 4rem 0;
+  }
+
+  .features h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .feature-card {
+    background: var(--color-card-bg);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    border: 1px solid var(--color-border);
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .feature-card p {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+  }
+
+  .projects-preview {
+    padding: 4rem 0;
+  }
+
+  .projects-preview h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-card {
+    background: var(--color-card-bg);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--color-border);
+    transition: all 0.2s;
+  }
+
+  .project-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+  }
+
+  .project-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .project-card p {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+
+  .tech-tag {
+    display: inline-block;
+    background: var(--color-bg);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+  }
+
+  .view-all {
+    text-align: center;
+    display: block;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+    }
+
+    .nav-links {
+      gap: 1rem;
+    }
+  }
+</style>

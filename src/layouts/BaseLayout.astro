@@ -1,0 +1,145 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Link Trust - 链接信任，共建未来" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Link Trust</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a href="/" class="logo">Link Trust</a>
+        <ul class="nav-links">
+          <li><a href="/">首页</a></li>
+          <li><a href="/projects">项目</a></li>
+          <li><a href="/about">关于</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <p>&copy; {new Date().getFullYear()} Link Trust. Made with ❤️ by the community.</p>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --color-bg: #ffffff;
+    --color-text: #1a1a1a;
+    --color-text-secondary: #666666;
+    --color-primary: #2563eb;
+    --color-primary-hover: #1d4ed8;
+    --color-border: #e5e5e5;
+    --color-card-bg: #f9f9f9;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a:hover {
+    color: var(--color-primary-hover);
+  }
+
+  ul {
+    list-style: none;
+  }
+</style>
+
+<style>
+  .header {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 2rem;
+    background: var(--color-bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .logo:hover {
+    color: var(--color-primary);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    color: var(--color-text-secondary);
+    font-weight: 500;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-primary);
+  }
+
+  .main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    width: 100%;
+  }
+
+  .footer {
+    border-top: 1px solid var(--color-border);
+    padding: 2rem;
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+  }
+</style>

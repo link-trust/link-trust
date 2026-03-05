@@ -1,0 +1,37 @@
+# EdgeOne 部署配置文件
+# 用于腾讯云 EdgeOne 静态网站托管
+
+# 构建配置
+build:
+  # 构建命令
+  command: npm run build
+  # 输出目录
+  output: dist
+  # Node.js 版本
+  node_version: 18
+
+# 路由配置
+routes:
+  # SPA 路由支持
+  - type: rewrite
+    source: /*
+    destination: /index.html
+    when: 
+      - expression: "not file_exists({path})"
+
+# 缓存配置
+cache:
+  - path: /*
+    ttl: 3600
+    browser_ttl: 300
+
+# 安全头
+headers:
+  - path: /*
+    headers:
+      - key: X-Content-Type-Options
+        value: nosniff
+      - key: X-Frame-Options
+        value: DENY
+      - key: X-XSS-Protection
+        value: 1; mode=block
